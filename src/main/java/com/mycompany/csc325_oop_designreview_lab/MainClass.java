@@ -4,13 +4,17 @@
  */
 package com.mycompany.csc325_oop_designreview_lab;
 
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
 /**
  *
  * @author MoaathAlrajab
  */
 public class MainClass {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		// ToDo 5: Fix the error
 		
 		// ToDo 6: Fix the constructor of Student class
@@ -23,13 +27,22 @@ public class MainClass {
 		
                 // ToDo 10: Add a toString method for Senior class
                 
-		Freshman std1= new Student("James", 20, 12); // name, age, credits
-                
-                Senior std2 = new Student("John", 30, 90);
-		
+		Student std1= new Freshman("James", (short)20, 12); // name, age, credits
+                std1.setAddress("123 Wow St.");
+                Student std2 = new Senior("John", (short)30, 90);
+		std2.setAddress("123 Your Ave.");
 		// ToDo 11: Set the gpa of the student using the scanner and user
 		// 			input and then print the output.
-		
+                
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Enter your GPA for std1: ");
+                int gpa = sc.nextInt();
+		std1.setGpa(gpa);
+                
+                System.out.println("Enter your GPA for std2: ");
+                gpa = sc.nextInt();
+		std2.setGpa(gpa);
+            
 		System.out.println(std1);
                 
                 System.out.println(std2);
